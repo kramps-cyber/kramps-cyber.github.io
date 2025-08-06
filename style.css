@@ -36,7 +36,7 @@ nav.main li.breadcrumb{
 nav.side{
     width: 5rem;
     height: calc(100vh - 3.3rem);
-    position: absolute;
+    position: fixed;
     top: 3.3rem;
     left: 0;
     display: flex;
@@ -440,3 +440,4 @@ input[type="checkbox"] {
     font-style: italic;
     cursor: default;
   }
+
