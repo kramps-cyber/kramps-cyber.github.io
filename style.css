@@ -4,7 +4,9 @@
     padding: 0;
     box-sizing: border-box;
 }
-
+body{
+    overflow-y: hidden;
+}
 nav.title_bar{
     position: absolute;
     top: 5rem;
@@ -23,6 +25,8 @@ nav.main{
     padding: 1rem;
     padding-inline-end: 2.5rem;
     color: #fff;
+    position: fixed;
+    top: 0;
 }
 nav.main li{
     list-style: none;
@@ -69,9 +73,6 @@ nav.side li:hover{
 }
 
 
-/* nav.side li:hover path{
-    fill: orange;
-} */
 
 
 main{
@@ -133,8 +134,8 @@ main.home > .wrapper > .col_a .chart-container{
     margin-top: 2rem;
 }
 
-main.concerns{
-    height: calc(100vh - 2rem);
+main.concerns,main.terminals,main.people,main.meetings{
+    min-height: calc(100vh - 2rem);
 }
 
 
@@ -150,6 +151,7 @@ main .header {
     font-weight: 100;
     border-bottom: 1px solid #00000021;
     box-shadow: 0 -1px 6px -1px rgba(0, 0, 0, 0.1);
+    margin-top: 4.1rem;
 }
 
 main .header h1 {
@@ -440,4 +442,3 @@ input[type="checkbox"] {
     font-style: italic;
     cursor: default;
   }
-
