@@ -1,0 +1,1142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attendance System</title>
+    <link rel="stylesheet" href="./style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+</head>
+<body>
+    <!-- Breadcrumb -->
+    <!-- <nav class="title_bar">Home > Meetings > People</nav> -->
+
+
+<!-- main navigation pane -->
+    <nav class="main">
+        <li>Logo</li>
+        <li class="breadcrumb">Home > Meetings > People</li>
+        <li>User</li>
+    </nav>
+
+
+<!-- Side navigation -->
+    <nav class="side">
+        <li class="home">
+            <svg width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path class="home" d="M11 39H18.5V26.5H29.5V39H37V19.5L24 9.75L11 19.5V39ZM8 42V18L24 6L40 18V42H26.5V29.5H21.5V42H8Z" fill="#1F1F1F"/>
+                </svg>
+            Home
+        </li>
+        <li class="meetings">
+            <svg width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M29.841 37C28.4803 37 27.3333 36.5303 26.4 35.591C25.4667 34.6513 25 33.5013 25 32.141C25 30.7803 25.4697 29.6333 26.409 28.7C27.3487 27.7667 28.4987 27.3 29.859 27.3C31.2197 27.3 32.3667 27.7697 33.3 28.709C34.2333 29.6487 34.7 30.7987 34.7 32.159C34.7 33.5197 34.2303 34.6667 33.291 35.6C32.3513 36.5333 31.2013 37 29.841 37ZM9 44C8.2 44 7.5 43.7 6.9 43.1C6.3 42.5 6 41.8 6 41V10C6 9.2 6.3 8.5 6.9 7.9C7.5 7.3 8.2 7 9 7H12.25V4H15.5V7H32.5V4H35.75V7H39C39.8 7 40.5 7.3 41.1 7.9C41.7 8.5 42 9.2 42 10V41C42 41.8 41.7 42.5 41.1 43.1C40.5 43.7 39.8 44 39 44H9ZM9 41H39V19.5H9V41ZM9 16.5H39V10H9V16.5Z" fill="#1F1F1F"/>
+                </svg>                
+            Meetings
+        </li>
+        <li class="people">
+            <svg width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M1.9 40V35.3C1.9 34.1333 2.2 33.075 2.8 32.125C3.4 31.175 4.23333 30.4667 5.3 30C7.73334 28.9333 9.925 28.1667 11.875 27.7C13.825 27.2333 15.8333 27 17.9 27C19.9667 27 21.9667 27.2333 23.9 27.7C25.8333 28.1667 28.0167 28.9333 30.45 30C31.5167 30.4667 32.3583 31.175 32.975 32.125C33.5917 33.075 33.9 34.1333 33.9 35.3V40H1.9ZM36.9 40V35.3C36.9 33.2 36.3667 31.475 35.3 30.125C34.2333 28.775 32.8333 27.6833 31.1 26.85C33.4 27.1167 35.5667 27.5083 37.6 28.025C39.6333 28.5417 41.2833 29.1333 42.55 29.8C43.65 30.4333 44.5167 31.2167 45.15 32.15C45.7833 33.0833 46.1 34.1333 46.1 35.3V40H36.9ZM17.9 23.95C15.7 23.95 13.9 23.25 12.5 21.85C11.1 20.45 10.4 18.65 10.4 16.45C10.4 14.25 11.1 12.45 12.5 11.05C13.9 9.65 15.7 8.95 17.9 8.95C20.1 8.95 21.9 9.65 23.3 11.05C24.7 12.45 25.4 14.25 25.4 16.45C25.4 18.65 24.7 20.45 23.3 21.85C21.9 23.25 20.1 23.95 17.9 23.95ZM35.9 16.45C35.9 18.65 35.2 20.45 33.8 21.85C32.4 23.25 30.6 23.95 28.4 23.95C28.0333 23.95 27.625 23.925 27.175 23.875C26.725 23.825 26.3167 23.7333 25.95 23.6C26.75 22.7667 27.3583 21.7417 27.775 20.525C28.1917 19.3083 28.4 17.95 28.4 16.45C28.4 14.95 28.1917 13.625 27.775 12.475C27.3583 11.325 26.75 10.2667 25.95 9.3C26.3167 9.2 26.725 9.11666 27.175 9.05C27.625 8.98333 28.0333 8.95 28.4 8.95C30.6 8.95 32.4 9.65 33.8 11.05C35.2 12.45 35.9 14.25 35.9 16.45ZM4.9 37H30.9V35.3C30.9 34.7667 30.7417 34.25 30.425 33.75C30.1083 33.25 29.7167 32.9 29.25 32.7C26.85 31.6333 24.8333 30.9167 23.2 30.55C21.5667 30.1833 19.8 30 17.9 30C16 30 14.225 30.1833 12.575 30.55C10.925 30.9167 8.9 31.6333 6.5 32.7C6.03333 32.9 5.65 33.25 5.35 33.75C5.05 34.25 4.9 34.7667 4.9 35.3V37ZM17.9 20.95C19.2 20.95 20.275 20.525 21.125 19.675C21.975 18.825 22.4 17.75 22.4 16.45C22.4 15.15 21.975 14.075 21.125 13.225C20.275 12.375 19.2 11.95 17.9 11.95C16.6 11.95 15.525 12.375 14.675 13.225C13.825 14.075 13.4 15.15 13.4 16.45C13.4 17.75 13.825 18.825 14.675 19.675C15.525 20.525 16.6 20.95 17.9 20.95Z" fill="#1F1F1F"/>
+                </svg>
+            People
+        </li>
+        <li class="concerns">
+            <svg width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M21.95 33.5H37.95V32.55C37.95 31.15 37.2417 30.0083 35.825 29.125C34.4083 28.2417 32.45 27.8 29.95 27.8C27.45 27.8 25.4917 28.2417 24.075 29.125C22.6583 30.0083 21.95 31.15 21.95 32.55V33.5ZM29.946 24.8C30.9487 24.8 31.8083 24.443 32.525 23.729C33.2417 23.015 33.6 22.1567 33.6 21.154C33.6 20.1513 33.243 19.2917 32.529 18.575C31.815 17.8583 30.9567 17.5 29.954 17.5C28.9513 17.5 28.0917 17.857 27.375 18.571C26.6583 19.285 26.3 20.1433 26.3 21.146C26.3 22.1487 26.657 23.0083 27.371 23.725C28.085 24.4417 28.9433 24.8 29.946 24.8ZM7 40C6.2 40 5.5 39.6917 4.9 39.075C4.3 38.4583 4 37.7667 4 37V11C4 10.2333 4.3 9.54167 4.9 8.925C5.5 8.30833 6.2 8 7 8H21.05L24.05 11H41C41.7667 11 42.4583 11.3083 43.075 11.925C43.6917 12.5417 44 13.2333 44 14V37C44 37.7667 43.6917 38.4583 43.075 39.075C42.4583 39.6917 41.7667 40 41 40H7ZM7 37H41V14H22.8L19.8 11H7V37Z" fill="#1F1F1F"/>
+                </svg>                
+            Concerns
+        </li>
+        <li class="terminals">
+            <svg width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M4 44V38C4 37.1667 4.29383 36.4583 4.8815 35.875C5.46883 35.2917 6.175 35 7 35H41C41.825 35 42.5313 35.2937 43.119 35.881C43.7063 36.4687 44 37.175 44 38V44H4ZM7 41H41V38H7V41ZM10.15 31V7C10.15 6.2 10.45 5.5 11.05 4.9C11.65 4.3 12.35 4 13.15 4H34.85C35.65 4 36.35 4.3 36.95 4.9C37.55 5.5 37.85 6.2 37.85 7V31H34.85V7H13.15V31H10.15ZM16.15 27.55H17.3C18.6667 27.55 19.75 26.8487 20.55 25.446C21.35 24.0437 21.75 22.195 21.75 19.9C21.75 17.5667 21.35 15.7 20.55 14.3C19.75 12.9 18.6667 12.2 17.3 12.2H16.15V27.55ZM28.29 23.45C29.2633 23.45 30.1 23.1033 30.8 22.41C31.5 21.717 31.85 20.8837 31.85 19.91C31.85 18.9367 31.5033 18.1 30.81 17.4C30.117 16.7 29.2837 16.35 28.31 16.35C27.3367 16.35 26.5 16.6967 25.8 17.39C25.1 18.083 24.75 18.9163 24.75 19.89C24.75 20.8633 25.0967 21.7 25.79 22.4C26.483 23.1 27.3163 23.45 28.29 23.45Z" fill="#1F1F1F"/>
+            </svg>
+            Terminals
+        </li>
+    </nav>
+
+    
+<!-- Main navigation pane -->
+    <main class="home">
+
+
+      <!-- Dashboard -->
+        <div class="header">
+            <h1>Dashboard</h1>
+            <div class="actions">
+              <!-- <input type="text" id="dashboardname" placeholder="Type name here..."> -->
+              <div class="autocomplete-container">
+                <input type="text" id="dashboardname" placeholder="Type name here...">
+                <div id="nameSuggestions" class="autocomplete-list"></div>
+              </div>  
+              <input type="date" id="startDate">
+                <label for=""> - </label>
+                <input type="date" id="endDate">
+              <select id="location">
+                <option value="">All Locations</option>
+            </select>
+            <select id="department">
+                <option value="">All Departments</option>
+            </select>
+              <a class="clear-btn button">Clear</a>
+            </div>
+        </div>
+
+        
+
+        <!-- CONTAINER FOR CHARTS -->
+        <div class="wrapper">
+
+            <!-- BAR CHART CODE -->
+            <div class="chart col_a">
+                <div class="chart-container">
+                    <h3 class="chart-title">Meetings by Month</h3>
+                    <div class="chart-wrapper">
+                        <canvas id="meetingChart" class="big"></canvas>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TWO CHARTS ON THE SIDE -->
+            <div class="chart">
+                <!-- ATTENDANCE CHART -->
+                <div class="chart-container shadow">
+                  <h3 class="chart-title">Attendance Status Overview</h3>
+                    <div class="chart-wrapper xsmall">
+                      <canvas id="attendanceChart"></canvas>
+                    </div>
+                </div>
+
+                <!-- CONCERNS BY LOCATION CHART -->
+                <div class="chart-container shadow">
+                    <h3 class="chart-title">Concerns by Location</h3>
+                    <div class="chart-wrapper small">
+                        <canvas id="concernsChart"></canvas>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+
+    <main class="meetings">
+
+
+        <div class="header">
+          <h1>Meetings</h1>
+          <div class="actions">
+            <input type="date">
+            <label for=""> - </label>
+            <input type="date">
+            <input type="text" placeholder="Search..." />
+            <a href="" class="button">Filter</a>
+          </div>
+        </div>
+<div class="wrapper">
+          <table class=".no-shadow">
+            <thead>
+                <tr>
+                  <th><input type="checkbox" id="headerCheckbox" /></th>
+                  <th>Title</th>
+                  <th>Location</th>
+                  <th>Date</th>
+                  <th>Start/End Time</th>
+                  <th>Shift</th>
+                  <th>Attendants</th>
+                  <th>Status</th>
+                  <th>Download | Share</th>
+                </tr>
+              </thead>
+        </table>
+
+        <div class="main-wrapper">
+
+            <table>
+                <!-- <thead>
+                  <tr>
+                    <th><input type="checkbox" id="headerCheckbox" /></th>
+                    <th>Title</th>
+                    <th>Location</th>
+                    <th>Date</th>
+                    <th>Start/End Time</th>
+                    <th>Shift</th>
+                    <th>Attendants</th>
+                    <th>Status</th>
+                    <th>Download | Share</th>
+                  </tr>
+                </thead> -->
+                <tbody>
+                  <tr class="selected-row">
+                    <td><input type="checkbox" checked /></td>
+                    <td>SHE Day Brief</td>
+                    <td>KMS Muster Room</td>
+                    <td>28th March, 2025</td>
+                    <td>12:00PM</td>
+                    <td>Morning</td>
+                    <td>30</td>
+                    <td>In progress</td>
+                    <td>Download | Share</td>
+                  </tr>
+                  <tr class="selected-row">
+                    <td><input type="checkbox" checked /></td>
+                    <td>Other</td>
+                    <td>KMS Muster Room</td>
+                    <td>28th March, 2025</td>
+                    <td>12:00PM</td>
+                    <td>Morning</td>
+                    <td>30</td>
+                    <td>Completed</td>
+                    <td>Download | Share</td>
+                  </tr>
+                  <tr class="selected-row">
+                    <td><input type="checkbox" checked /></td>
+                    <td>Other</td>
+                    <td>KMS Muster Room</td>
+                    <td>28th March, 2025</td>
+                    <td>12:00PM</td>
+                    <td>Morning</td>
+                    <td>30</td>
+                    <td>Completed</td>
+                    <td>Download | Share</td>
+                  </tr>
+                  <tr class="selected-row">
+                    <td><input type="checkbox" checked /></td>
+                    <td>Other</td>
+                    <td>KMS Muster Room</td>
+                    <td>28th March, 2025</td>
+                    <td>12:00PM</td>
+                    <td>Morning</td>
+                    <td>30</td>
+                    <td>Completed</td>
+                    <td>Download | Share</td>
+                  </tr>
+                  <tr class="selected-row">
+                    <td><input type="checkbox" checked /></td>
+                    <td>Other</td>
+                    <td>KMS Muster Room</td>
+                    <td>28th March, 2025</td>
+                    <td>12:00PM</td>
+                    <td>Morning</td>
+                    <td>30</td>
+                    <td>Completed</td>
+                    <td>Download | Share</td>
+                  </tr>
+                  <tr class="selected-row">
+                    <td><input type="checkbox" checked /></td>
+                    <td>Other</td>
+                    <td>KMS Muster Room</td>
+                    <td>28th March, 2025</td>
+                    <td>12:00PM</td>
+                    <td>Morning</td>
+                    <td>30</td>
+                    <td>Completed</td>
+                    <td>Download | Share</td>
+                  </tr>
+                  <tr class="selected-row">
+                    <td><input type="checkbox" checked /></td>
+                    <td>Other</td>
+                    <td>KMS Muster Room</td>
+                    <td>28th March, 2025</td>
+                    <td>12:00PM</td>
+                    <td>Morning</td>
+                    <td>30</td>
+                    <td>Completed</td>
+                    <td>Download | Share</td>
+                  </tr>
+                  <tr class="selected-row">
+                    <td><input type="checkbox" checked /></td>
+                    <td>Other</td>
+                    <td>KMS Muster Room</td>
+                    <td>28th March, 2025</td>
+                    <td>12:00PM</td>
+                    <td>Morning</td>
+                    <td>30</td>
+                    <td>Completed</td>
+                    <td>Download | Share</td>
+                  </tr>
+                  <tr class="selected-row">
+                    <td><input type="checkbox" checked /></td>
+                    <td>Other</td>
+                    <td>KMS Muster Room</td>
+                    <td>28th March, 2025</td>
+                    <td>12:00PM</td>
+                    <td>Morning</td>
+                    <td>30</td>
+                    <td>Completed</td>
+                    <td>Download | Share</td>
+                  </tr>
+
+ 
+                </tbody>
+              </table>
+
+
+
+
+
+        </div>
+</div>
+
+        
+
+
+
+    </main>
+
+
+    <main class="people">
+
+
+        <div class="header">
+          <h1>People</h1>
+          <div class="actions">
+            <input type="text" placeholder="Search..." />
+          </div>
+        </div>
+
+
+        <div class="wrapper">
+          <table class=".no-shadow">
+            <thead>
+              <tr>
+                <th><input type="checkbox" id="headerCheckbox" /></th>
+                <th>Name</th>
+                <th>Meetings</th>
+                <th>Trainings</th>
+                <th>Department</th>
+                <th>Date</th>
+                <th>Start/End Time</th>
+                <th>Shift</th>
+                <th>Status</th><!-- Ongoing Completed -->
+                <th>Punctuality</th><!-- On time Late Absent Excused -->
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="selected-row">
+                <td><input type="checkbox" checked /></td>
+                <td>John Mensah Sarbah</td>
+                <td>SHE Day Brief</td>
+                <td>-</td>
+                <td>Engineering</td>
+                <td>24/05/25</td>
+                <td>12:00 a.m. - 1:00 p.m.</td>
+                <td>Morning</td>
+                <td>Completed</td>
+                <td>On time</td>
+              </tr>
+              <tr class="selected-row">
+                <td><input type="checkbox" checked /></td>
+                <td>Godfred Mensah Sarbah</td>
+                <td>Toolbox Meeting</td>
+                <td>Cyanide Training</td>
+                <td>PSBI</td>
+                <td>24/05/25 - 13/06/25</td>
+                <td>12:00 a.m. - 1:00 p.m.</td>
+                <td>Morning</td>
+                <td>Ongoing</td>
+                <td>Late</td>
+              </tr>
+              <tr class="selected-row">
+                <td><input type="checkbox" checked /></td>
+                <td>Godfred Mensah Sarbah</td>
+                <td>Toolbox Meeting</td>
+                <td>Cyanide Training</td>
+                <td>PSBI</td>
+                <td>24/05/25 - 13/06/25</td>
+                <td>12:00 a.m. - 1:00 p.m.</td>
+                <td>Morning</td>
+                <td>Ongoing</td>
+                <td>Late</td>
+              </tr>
+              <tr class="selected-row">
+                <td><input type="checkbox" checked /></td>
+                <td>Godfred Mensah Sarbah</td>
+                <td>Toolbox Meeting</td>
+                <td>Cyanide Training</td>
+                <td>PSBI</td>
+                <td>24/05/25 - 13/06/25</td>
+                <td>12:00 a.m. - 1:00 p.m.</td>
+                <td>Morning</td>
+                <td>Ongoing</td>
+                <td>Late</td>
+              </tr>
+              <tr class="selected-row">
+                <td><input type="checkbox" checked /></td>
+                <td>Godfred Mensah Sarbah</td>
+                <td>Toolbox Meeting</td>
+                <td>Cyanide Training</td>
+                <td>PSBI</td>
+                <td>24/05/25 - 13/06/25</td>
+                <td>12:00 a.m. - 1:00 p.m.</td>
+                <td>Morning</td>
+                <td>Ongoing</td>
+                <td>Late</td>
+              </tr>
+              <tr class="selected-row">
+                <td><input type="checkbox" checked /></td>
+                <td>Godfred Mensah Sarbah</td>
+                <td>Toolbox Meeting</td>
+                <td>Cyanide Training</td>
+                <td>PSBI</td>
+                <td>24/05/25 - 13/06/25</td>
+                <td>12:00 a.m. - 1:00 p.m.</td>
+                <td>Morning</td>
+                <td>Ongoing</td>
+                <td>Late</td>
+              </tr>
+              <tr class="selected-row">
+                <td><input type="checkbox" checked /></td>
+                <td>Godfred Mensah Sarbah</td>
+                <td>Toolbox Meeting</td>
+                <td>Cyanide Training</td>
+                <td>PSBI</td>
+                <td>24/05/25 - 13/06/25</td>
+                <td>12:00 a.m. - 1:00 p.m.</td>
+                <td>Morning</td>
+                <td>Ongoing</td>
+                <td>Late</td>
+              </tr>
+              <tr class="selected-row">
+                <td><input type="checkbox" checked /></td>
+                <td>Godfred Mensah Sarbah</td>
+                <td>Toolbox Meeting</td>
+                <td>Cyanide Training</td>
+                <td>PSBI</td>
+                <td>24/05/25 - 13/06/25</td>
+                <td>12:00 a.m. - 1:00 p.m.</td>
+                <td>Morning</td>
+                <td>Ongoing</td>
+                <td>Late</td>
+              </tr>
+              <tr class="selected-row">
+                <td><input type="checkbox" checked /></td>
+                <td>Godfred Mensah Sarbah</td>
+                <td>Toolbox Meeting</td>
+                <td>Cyanide Training</td>
+                <td>PSBI</td>
+                <td>24/05/25 - 13/06/25</td>
+                <td>12:00 a.m. - 1:00 p.m.</td>
+                <td>Morning</td>
+                <td>Ongoing</td>
+                <td>Late</td>
+              </tr>
+              <tr class="selected-row">
+                <td><input type="checkbox" checked /></td>
+                <td>Godfred Mensah Sarbah</td>
+                <td>Toolbox Meeting</td>
+                <td>Cyanide Training</td>
+                <td>PSBI</td>
+                <td>24/05/25 - 13/06/25</td>
+                <td>12:00 a.m. - 1:00 p.m.</td>
+                <td>Morning</td>
+                <td>Ongoing</td>
+                <td>Late</td>
+              </tr>
+              <tr class="selected-row">
+                <td><input type="checkbox" checked /></td>
+                <td>Godfred Mensah Sarbah</td>
+                <td>Toolbox Meeting</td>
+                <td>Cyanide Training</td>
+                <td>PSBI</td>
+                <td>24/05/25 - 13/06/25</td>
+                <td>12:00 a.m. - 1:00 p.m.</td>
+                <td>Morning</td>
+                <td>Ongoing</td>
+                <td>Late</td>
+              </tr>
+              <tr class="selected-row">
+                <td><input type="checkbox" checked /></td>
+                <td>Godfred Mensah Sarbah</td>
+                <td>Toolbox Meeting</td>
+                <td>Cyanide Training</td>
+                <td>PSBI</td>
+                <td>24/05/25 - 13/06/25</td>
+                <td>12:00 a.m. - 1:00 p.m.</td>
+                <td>Morning</td>
+                <td>Ongoing</td>
+                <td>Late</td>
+              </tr>
+              <tr class="selected-row">
+                <td><input type="checkbox" checked /></td>
+                <td>Godfred Mensah Sarbah</td>
+                <td>Toolbox Meeting</td>
+                <td>Cyanide Training</td>
+                <td>PSBI</td>
+                <td>24/05/25 - 13/06/25</td>
+                <td>12:00 a.m. - 1:00 p.m.</td>
+                <td>Morning</td>
+                <td>Ongoing</td>
+                <td>Late</td>
+              </tr>
+              <tr class="selected-row">
+                <td><input type="checkbox" checked /></td>
+                <td>Godfred Mensah Sarbah</td>
+                <td>Toolbox Meeting</td>
+                <td>Cyanide Training</td>
+                <td>PSBI</td>
+                <td>24/05/25 - 13/06/25</td>
+                <td>12:00 a.m. - 1:00 p.m.</td>
+                <td>Morning</td>
+                <td>Ongoing</td>
+                <td>Late</td>
+              </tr>
+              <tr class="selected-row">
+                <td><input type="checkbox" checked /></td>
+                <td>Godfred Mensah Sarbah</td>
+                <td>Toolbox Meeting</td>
+                <td>Cyanide Training</td>
+                <td>PSBI</td>
+                <td>24/05/25 - 13/06/25</td>
+                <td>12:00 a.m. - 1:00 p.m.</td>
+                <td>Morning</td>
+                <td>Ongoing</td>
+                <td>Late</td>
+              </tr>
+              <tr class="selected-row">
+                <td><input type="checkbox" checked /></td>
+                <td>Godfred Mensah Sarbah</td>
+                <td>Toolbox Meeting</td>
+                <td>Cyanide Training</td>
+                <td>PSBI</td>
+                <td>24/05/25 - 13/06/25</td>
+                <td>12:00 a.m. - 1:00 p.m.</td>
+                <td>Morning</td>
+                <td>Ongoing</td>
+                <td>Late</td>
+              </tr>
+              <tr class="selected-row">
+                <td><input type="checkbox" checked /></td>
+                <td>Godfred Mensah Sarbah</td>
+                <td>Toolbox Meeting</td>
+                <td>Cyanide Training</td>
+                <td>PSBI</td>
+                <td>24/05/25 - 13/06/25</td>
+                <td>12:00 a.m. - 1:00 p.m.</td>
+                <td>Morning</td>
+                <td>Ongoing</td>
+                <td>Late</td>
+              </tr>
+              <tr class="selected-row">
+                <td><input type="checkbox" checked /></td>
+                <td>Godfred Mensah Sarbah</td>
+                <td>Toolbox Meeting</td>
+                <td>Cyanide Training</td>
+                <td>PSBI</td>
+                <td>24/05/25 - 13/06/25</td>
+                <td>12:00 a.m. - 1:00 p.m.</td>
+                <td>Morning</td>
+                <td>Ongoing</td>
+                <td>Late</td>
+              </tr>
+              <tr class="selected-row">
+                <td><input type="checkbox" checked /></td>
+                <td>Godfred Mensah Sarbah</td>
+                <td>Toolbox Meeting</td>
+                <td>Cyanide Training</td>
+                <td>PSBI</td>
+                <td>24/05/25 - 13/06/25</td>
+                <td>12:00 a.m. - 1:00 p.m.</td>
+                <td>Morning</td>
+                <td>Ongoing</td>
+                <td>Late</td>
+              </tr>
+              <tr class="selected-row">
+                <td><input type="checkbox" checked /></td>
+                <td>Godfred Mensah Sarbah</td>
+                <td>Toolbox Meeting</td>
+                <td>Cyanide Training</td>
+                <td>PSBI</td>
+                <td>24/05/25 - 13/06/25</td>
+                <td>12:00 a.m. - 1:00 p.m.</td>
+                <td>Morning</td>
+                <td>Ongoing</td>
+                <td>Late</td>
+              </tr>
+              <tr class="selected-row">
+                <td><input type="checkbox" checked /></td>
+                <td>Godfred Mensah Sarbah</td>
+                <td>Toolbox Meeting</td>
+                <td>Cyanide Training</td>
+                <td>PSBI</td>
+                <td>24/05/25 - 13/06/25</td>
+                <td>12:00 a.m. - 1:00 p.m.</td>
+                <td>Morning</td>
+                <td>Ongoing</td>
+                <td>Late</td>
+              </tr>
+              <tr class="selected-row">
+                <td><input type="checkbox" checked /></td>
+                <td>Godfred Mensah Sarbah</td>
+                <td>Toolbox Meeting</td>
+                <td>Cyanide Training</td>
+                <td>PSBI</td>
+                <td>24/05/25 - 13/06/25</td>
+                <td>12:00 a.m. - 1:00 p.m.</td>
+                <td>Morning</td>
+                <td>Ongoing</td>
+                <td>Late</td>
+              </tr>
+              <tr class="selected-row">
+                <td><input type="checkbox" checked /></td>
+                <td>Godfred Mensah Sarbah</td>
+                <td>Toolbox Meeting</td>
+                <td>Cyanide Training</td>
+                <td>PSBI</td>
+                <td>24/05/25 - 13/06/25</td>
+                <td>12:00 a.m. - 1:00 p.m.</td>
+                <td>Morning</td>
+                <td>Ongoing</td>
+                <td>Late</td>
+              </tr>
+              <tr class="selected-row">
+                <td><input type="checkbox" checked /></td>
+                <td>Godfred Mensah Sarbah</td>
+                <td>Toolbox Meeting</td>
+                <td>Cyanide Training</td>
+                <td>PSBI</td>
+                <td>24/05/25 - 13/06/25</td>
+                <td>12:00 a.m. - 1:00 p.m.</td>
+                <td>Morning</td>
+                <td>Ongoing</td>
+                <td>Late</td>
+              </tr>
+              <tr class="selected-row">
+                <td><input type="checkbox" checked /></td>
+                <td>Godfred Mensah Sarbah</td>
+                <td>Toolbox Meeting</td>
+                <td>Cyanide Training</td>
+                <td>PSBI</td>
+                <td>24/05/25 - 13/06/25</td>
+                <td>12:00 a.m. - 1:00 p.m.</td>
+                <td>Morning</td>
+                <td>Ongoing</td>
+                <td>Late</td>
+              </tr>
+              <tr class="selected-row">
+                <td><input type="checkbox" checked /></td>
+                <td>Godfred Mensah Sarbah</td>
+                <td>Toolbox Meeting</td>
+                <td>Cyanide Training</td>
+                <td>PSBI</td>
+                <td>24/05/25 - 13/06/25</td>
+                <td>12:00 a.m. - 1:00 p.m.</td>
+                <td>Morning</td>
+                <td>Ongoing</td>
+                <td>Late</td>
+              </tr>
+              <tr class="selected-row">
+                <td><input type="checkbox" checked /></td>
+                <td>Godfred Mensah Sarbah</td>
+                <td>Toolbox Meeting</td>
+                <td>Cyanide Training</td>
+                <td>PSBI</td>
+                <td>24/05/25 - 13/06/25</td>
+                <td>12:00 a.m. - 1:00 p.m.</td>
+                <td>Morning</td>
+                <td>Ongoing</td>
+                <td>Late</td>
+              </tr>
+              <tr class="selected-row">
+                <td><input type="checkbox" checked /></td>
+                <td>Godfred Mensah Sarbah</td>
+                <td>Toolbox Meeting</td>
+                <td>Cyanide Training</td>
+                <td>PSBI</td>
+                <td>24/05/25 - 13/06/25</td>
+                <td>12:00 a.m. - 1:00 p.m.</td>
+                <td>Morning</td>
+                <td>Ongoing</td>
+                <td>Late</td>
+              </tr>
+              <tr class="selected-row">
+                <td><input type="checkbox" checked /></td>
+                <td>Godfred Mensah Sarbah</td>
+                <td>Toolbox Meeting</td>
+                <td>Cyanide Training</td>
+                <td>PSBI</td>
+                <td>24/05/25 - 13/06/25</td>
+                <td>12:00 a.m. - 1:00 p.m.</td>
+                <td>Morning</td>
+                <td>Ongoing</td>
+                <td>Late</td>
+              </tr>
+              <tr class="selected-row">
+                <td><input type="checkbox" checked /></td>
+                <td>Godfred Mensah Sarbah</td>
+                <td>Toolbox Meeting</td>
+                <td>Cyanide Training</td>
+                <td>PSBI</td>
+                <td>24/05/25 - 13/06/25</td>
+                <td>12:00 a.m. - 1:00 p.m.</td>
+                <td>Morning</td>
+                <td>Ongoing</td>
+                <td>Late</td>
+              </tr>
+              <tr class="selected-row">
+                <td><input type="checkbox" checked /></td>
+                <td>Godfred Mensah Sarbah</td>
+                <td>Toolbox Meeting</td>
+                <td>Cyanide Training</td>
+                <td>PSBI</td>
+                <td>24/05/25 - 13/06/25</td>
+                <td>12:00 a.m. - 1:00 p.m.</td>
+                <td>Morning</td>
+                <td>Ongoing</td>
+                <td>Late</td>
+              </tr>
+              <tr class="selected-row">
+                <td><input type="checkbox" checked /></td>
+                <td>Godfred Mensah Sarbah</td>
+                <td>Toolbox Meeting</td>
+                <td>Cyanide Training</td>
+                <td>PSBI</td>
+                <td>24/05/25 - 13/06/25</td>
+                <td>12:00 a.m. - 1:00 p.m.</td>
+                <td>Morning</td>
+                <td>Ongoing</td>
+                <td>Late</td>
+              </tr>
+              <tr class="selected-row">
+                <td><input type="checkbox" checked /></td>
+                <td>Godfred Mensah Sarbah</td>
+                <td>Toolbox Meeting</td>
+                <td>Cyanide Training</td>
+                <td>PSBI</td>
+                <td>24/05/25 - 13/06/25</td>
+                <td>12:00 a.m. - 1:00 p.m.</td>
+                <td>Morning</td>
+                <td>Ongoing</td>
+                <td>Late</td>
+              </tr>
+              <tr class="selected-row">
+                <td><input type="checkbox" checked /></td>
+                <td>Godfred Mensah Sarbah</td>
+                <td>Toolbox Meeting</td>
+                <td>Cyanide Training</td>
+                <td>PSBI</td>
+                <td>24/05/25 - 13/06/25</td>
+                <td>12:00 a.m. - 1:00 p.m.</td>
+                <td>Morning</td>
+                <td>Ongoing</td>
+                <td>Late</td>
+              </tr>
+              <tr class="selected-row">
+                <td><input type="checkbox" checked /></td>
+                <td>Godfred Mensah Sarbah</td>
+                <td>Toolbox Meeting</td>
+                <td>Cyanide Training</td>
+                <td>PSBI</td>
+                <td>24/05/25 - 13/06/25</td>
+                <td>12:00 a.m. - 1:00 p.m.</td>
+                <td>Morning</td>
+                <td>Ongoing</td>
+                <td>Late</td>
+              </tr>
+              <tr class="selected-row">
+                <td><input type="checkbox" checked /></td>
+                <td>Godfred Mensah Sarbah</td>
+                <td>Toolbox Meeting</td>
+                <td>Cyanide Training</td>
+                <td>PSBI</td>
+                <td>24/05/25 - 13/06/25</td>
+                <td>12:00 a.m. - 1:00 p.m.</td>
+                <td>Morning</td>
+                <td>Ongoing</td>
+                <td>Late</td>
+              </tr>
+              <tr class="selected-row">
+                <td><input type="checkbox" checked /></td>
+                <td>Godfred Mensah Sarbah</td>
+                <td>Toolbox Meeting</td>
+                <td>Cyanide Training</td>
+                <td>PSBI</td>
+                <td>24/05/25 - 13/06/25</td>
+                <td>12:00 a.m. - 1:00 p.m.</td>
+                <td>Morning</td>
+                <td>Ongoing</td>
+                <td>Late</td>
+              </tr>
+              <tr class="selected-row">
+                <td><input type="checkbox" checked /></td>
+                <td>Godfred Mensah Sarbah</td>
+                <td>Toolbox Meeting</td>
+                <td>Cyanide Training</td>
+                <td>PSBI</td>
+                <td>24/05/25 - 13/06/25</td>
+                <td>12:00 a.m. - 1:00 p.m.</td>
+                <td>Morning</td>
+                <td>Ongoing</td>
+                <td>Late</td>
+              </tr>
+              <tr class="selected-row">
+                <td><input type="checkbox" checked /></td>
+                <td>Godfred Mensah Sarbah</td>
+                <td>Toolbox Meeting</td>
+                <td>Cyanide Training</td>
+                <td>PSBI</td>
+                <td>24/05/25 - 13/06/25</td>
+                <td>12:00 a.m. - 1:00 p.m.</td>
+                <td>Morning</td>
+                <td>Ongoing</td>
+                <td>Late</td>
+              </tr>
+              <tr class="selected-row">
+                <td><input type="checkbox" checked /></td>
+                <td>Godfred Mensah Sarbah</td>
+                <td>Toolbox Meeting</td>
+                <td>Cyanide Training</td>
+                <td>PSBI</td>
+                <td>24/05/25 - 13/06/25</td>
+                <td>12:00 a.m. - 1:00 p.m.</td>
+                <td>Morning</td>
+                <td>Ongoing</td>
+                <td>Late</td>
+              </tr>
+              <tr class="selected-row">
+                <td><input type="checkbox" checked /></td>
+                <td>Godfred Mensah Sarbah</td>
+                <td>Toolbox Meeting</td>
+                <td>Cyanide Training</td>
+                <td>PSBI</td>
+                <td>24/05/25 - 13/06/25</td>
+                <td>12:00 a.m. - 1:00 p.m.</td>
+                <td>Morning</td>
+                <td>Ongoing</td>
+                <td>Late</td>
+              </tr>
+              <tr class="selected-row">
+                <td><input type="checkbox" checked /></td>
+                <td>Godfred Mensah Sarbah</td>
+                <td>Toolbox Meeting</td>
+                <td>Cyanide Training</td>
+                <td>PSBI</td>
+                <td>24/05/25 - 13/06/25</td>
+                <td>12:00 a.m. - 1:00 p.m.</td>
+                <td>Morning</td>
+                <td>Ongoing</td>
+                <td>Late</td>
+              </tr>
+              <tr class="selected-row">
+                <td><input type="checkbox" checked /></td>
+                <td>Godfred Mensah Sarbah</td>
+                <td>Toolbox Meeting</td>
+                <td>Cyanide Training</td>
+                <td>PSBI</td>
+                <td>24/05/25 - 13/06/25</td>
+                <td>12:00 a.m. - 1:00 p.m.</td>
+                <td>Morning</td>
+                <td>Ongoing</td>
+                <td>Late</td>
+              </tr>
+              <tr class="selected-row">
+                <td><input type="checkbox" checked /></td>
+                <td>Godfred Mensah Sarbah</td>
+                <td>Toolbox Meeting</td>
+                <td>Cyanide Training</td>
+                <td>PSBI</td>
+                <td>24/05/25 - 13/06/25</td>
+                <td>12:00 a.m. - 1:00 p.m.</td>
+                <td>Morning</td>
+                <td>Ongoing</td>
+                <td>Late</td>
+              </tr>
+              <tr class="selected-row">
+                <td><input type="checkbox" checked /></td>
+                <td>Godfred Mensah Sarbah</td>
+                <td>Toolbox Meeting</td>
+                <td>Cyanide Training</td>
+                <td>PSBI</td>
+                <td>24/05/25 - 13/06/25</td>
+                <td>12:00 a.m. - 1:00 p.m.</td>
+                <td>Morning</td>
+                <td>Ongoing</td>
+                <td>Late</td>
+              </tr>
+              <tr class="selected-row">
+                <td><input type="checkbox" checked /></td>
+                <td>Godfred Mensah Sarbah</td>
+                <td>Toolbox Meeting</td>
+                <td>Cyanide Training</td>
+                <td>PSBI</td>
+                <td>24/05/25 - 13/06/25</td>
+                <td>12:00 a.m. - 1:00 p.m.</td>
+                <td>Morning</td>
+                <td>Ongoing</td>
+                <td>Late</td>
+              </tr>
+              <tr class="selected-row">
+                <td><input type="checkbox" checked /></td>
+                <td>Godfred Mensah Sarbah</td>
+                <td>Toolbox Meeting</td>
+                <td>Cyanide Training</td>
+                <td>PSBI</td>
+                <td>24/05/25 - 13/06/25</td>
+                <td>12:00 a.m. - 1:00 p.m.</td>
+                <td>Morning</td>
+                <td>Ongoing</td>
+                <td>Late</td>
+              </tr>
+              <tr class="selected-row">
+                <td><input type="checkbox" checked /></td>
+                <td>Godfred Mensah Sarbah</td>
+                <td>Toolbox Meeting</td>
+                <td>Cyanide Training</td>
+                <td>PSBI</td>
+                <td>24/05/25 - 13/06/25</td>
+                <td>12:00 a.m. - 1:00 p.m.</td>
+                <td>Morning</td>
+                <td>Ongoing</td>
+                <td>Late</td>
+              </tr>
+              <tr class="selected-row">
+                <td><input type="checkbox" checked /></td>
+                <td>Godfred Mensah Sarbah</td>
+                <td>Toolbox Meeting</td>
+                <td>Cyanide Training</td>
+                <td>PSBI</td>
+                <td>24/05/25 - 13/06/25</td>
+                <td>12:00 a.m. - 1:00 p.m.</td>
+                <td>Morning</td>
+                <td>Ongoing</td>
+                <td>Late</td>
+              </tr>
+              <tr class="selected-row">
+                <td><input type="checkbox" checked /></td>
+                <td>Godfred Mensah Sarbah</td>
+                <td>Toolbox Meeting</td>
+                <td>Cyanide Training</td>
+                <td>PSBI</td>
+                <td>24/05/25 - 13/06/25</td>
+                <td>12:00 a.m. - 1:00 p.m.</td>
+                <td>Morning</td>
+                <td>Ongoing</td>
+                <td>Late</td>
+              </tr>
+              <tr class="selected-row">
+                <td><input type="checkbox" checked /></td>
+                <td>Godfred Mensah Sarbah</td>
+                <td>Toolbox Meeting</td>
+                <td>Cyanide Training</td>
+                <td>PSBI</td>
+                <td>24/05/25 - 13/06/25</td>
+                <td>12:00 a.m. - 1:00 p.m.</td>
+                <td>Morning</td>
+                <td>Ongoing</td>
+                <td>Late</td>
+              </tr>
+              <tr class="selected-row">
+                <td><input type="checkbox" checked /></td>
+                <td>Godfred Mensah Sarbah</td>
+                <td>Toolbox Meeting</td>
+                <td>Cyanide Training</td>
+                <td>PSBI</td>
+                <td>24/05/25 - 13/06/25</td>
+                <td>12:00 a.m. - 1:00 p.m.</td>
+                <td>Morning</td>
+                <td>Ongoing</td>
+                <td>Late</td>
+              </tr>
+              <tr class="selected-row">
+                <td><input type="checkbox" checked /></td>
+                <td>Godfred Mensah Sarbah</td>
+                <td>Toolbox Meeting</td>
+                <td>Cyanide Training</td>
+                <td>PSBI</td>
+                <td>24/05/25 - 13/06/25</td>
+                <td>12:00 a.m. - 1:00 p.m.</td>
+                <td>Morning</td>
+                <td>Ongoing</td>
+                <td>Late</td>
+              </tr>
+              <tr class="selected-row">
+                <td><input type="checkbox" checked /></td>
+                <td>Godfred Mensah Sarbah</td>
+                <td>Toolbox Meeting</td>
+                <td>Cyanide Training</td>
+                <td>PSBI</td>
+                <td>24/05/25 - 13/06/25</td>
+                <td>12:00 a.m. - 1:00 p.m.</td>
+                <td>Morning</td>
+                <td>Ongoing</td>
+                <td>Late</td>
+              </tr>
+              <tr class="selected-row">
+                <td><input type="checkbox" checked /></td>
+                <td>Godfred Mensah Sarbah</td>
+                <td>Safety Talk</td>
+                <td>Cyanide Training</td>
+                <td>PSBI</td>
+                <td>24/05/25 - 13/06/25</td>
+                <td>12:00 a.m. - 1:00 p.m.</td>
+                <td>Morning</td>
+                <td>Ongoing</td>
+                <td>Late</td>
+              </tr>
+              <tr class="selected-row">
+                <td><input type="checkbox" checked /></td>
+                <td>Godfred Mensah Sarbah</td>
+                <td>PSI</td>
+                <td>Cyanide Training</td>
+                <td>PSBI</td>
+                <td>24/05/25 - 13/06/25</td>
+                <td>12:00 a.m. - 1:00 p.m.</td>
+                <td>Morning</td>
+                <td>Ongoing</td>
+                <td>Late</td>
+              </tr>
+              <tr class="selected-row">
+                <td><input type="checkbox" checked /></td>
+                <td>Godfred Mensah Sarbah</td>
+                <td>Safety Action Meeting</td>
+                <td>Cyanide Training</td>
+                <td>PSBI</td>
+                <td>24/05/25 - 13/06/25</td>
+                <td>12:00 a.m. - 1:00 p.m.</td>
+                <td>Morning</td>
+                <td>Ongoing</td>
+                <td>Late</td>
+              </tr>
+
+            </tbody>
+          </table>
+        </div>
+
+    </main>
+
+
+    <main class="concerns">
+
+
+        <div class="header">
+            <h1>Concerns</h1>
+            <div class="actions">
+              <input type="text" placeholder="Search..." />
+            </div>
+        </div>
+
+
+        <table>
+            <thead>
+              <tr>
+                <th><input type="checkbox" id="headerCheckbox" /></th>
+                <th>Name</th>
+                <th>Location</th>
+                <th>Date</th>
+                <th>Time</th>
+                <th>Shift</th>
+                <th>Attendants</th>
+                <th>Status</th>
+                <th>Download | Share</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="selected-row">
+                <td><input type="checkbox" checked /></td>
+                <td>SHE Day Brief</td>
+                <td>KMS Muster Room</td>
+                <td>28th March, 2025</td>
+                <td>12:00PM</td>
+                <td>Morning</td>
+                <td>30</td>
+                <td>Ongoing</td>
+                <td>Download | Share</td>
+              </tr>
+              <tr class="">
+                <td><input type="checkbox" checked /></td>
+                <td>SHE Day Brief</td>
+                <td>KMS Muster Room</td>
+                <td>28th March, 2025</td>
+                <td>12:00PM</td>
+                <td>Morning</td>
+                <td>30</td>
+                <td>Scheduled</td>
+                <td>Download | Share</td>
+              </tr>
+              <tr class="selected-row">
+                <td><input type="checkbox" checked /></td>
+                <td>SHE Day Brief</td>
+                <td>KMS Muster Room</td>
+                <td>28th March, 2025</td>
+                <td>12:00PM</td>
+                <td>Morning</td>
+                <td>30</td>
+                <td>Completed</td>
+                <td>Download | Share</td>
+              </tr>
+            </tbody>
+          </table>
+
+    </main>
+
+
+    <main class="terminals">
+
+
+        <div class="header">
+            <h1>Terminals</h1>
+            <div class="actions">
+              <input type="text" placeholder="Search..." />
+            </div>
+        </div>
+
+
+        <table>
+            <thead>
+              <tr>
+                <th><input type="checkbox" id="headerCheckbox" /></th>
+                <th>Name</th>
+                <th>Location</th>
+                <th>Date</th>
+                <th>Time</th>
+                <th>Shift</th>
+                <th>Attendants</th>
+                <th>Status</th>
+                <th>Download | Share</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="selected-row">
+                <td><input type="checkbox" checked /></td>
+                <td>SHE Day Brief</td>
+                <td>KMS Muster Room</td>
+                <td>28th March, 2025</td>
+                <td>12:00PM</td>
+                <td>Morning</td>
+                <td>30</td>
+                <td>Ongoing</td>
+                <td>Download | Share</td>
+              </tr>
+              <tr class="">
+                <td><input type="checkbox" checked /></td>
+                <td>SHE Day Brief</td>
+                <td>KMS Muster Room</td>
+                <td>28th March, 2025</td>
+                <td>12:00PM</td>
+                <td>Morning</td>
+                <td>30</td>
+                <td>Scheduled</td>
+                <td>Download | Share</td>
+              </tr>
+              <tr class="selected-row">
+                <td><input type="checkbox" checked /></td>
+                <td>SHE Day Brief</td>
+                <td>KMS Muster Room</td>
+                <td>28th March, 2025</td>
+                <td>12:00PM</td>
+                <td>Morning</td>
+                <td>30</td>
+                <td>Completed</td>
+                <td>Download | Share</td>
+              </tr>
+            </tbody>
+          </table>
+
+    </main>
+
+
+
+    <script src="./app.js"></script>
+
+
+</body>
+</html>
